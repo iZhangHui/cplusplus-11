@@ -7,13 +7,13 @@ int main(int argc, char const *argv[])
 	int x = 0;
 	int y = 42;
 
-	auto qqq = [x, &y] {
+	auto f = [x, &y] {
 		cout << "x: " << x << endl;
 		cout << "y: " << y << endl;
 		++y;
 	};
 
-	// auto qqq = [x, &y]() mutable {
+	// auto f = [x, &y]() mutable {
 	// 	cout << "x: " << x << endl;
 	// 	cout << "y: " << y << endl;
 	// 	++x;
@@ -21,8 +21,8 @@ int main(int argc, char const *argv[])
 	// };
 
 	x = y = 77;
-	qqq();
-	qqq();
+	f();
+	f();
 
 	cout << "Finally y: " << y << endl;
 	return 0;

@@ -2,7 +2,7 @@
 #include <memory>
 using namespace std;
 
-class D: public std::enable_shared_from_this<D>
+class D : public std::enable_shared_from_this<D>
 {
 public:
     D()
@@ -14,6 +14,7 @@ public:
     {
         cout<<"D::func()"<<endl;
         std::shared_ptr<D> p = shared_from_this();
+        // p->?
     }
 };
 

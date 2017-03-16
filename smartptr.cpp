@@ -41,47 +41,63 @@ class TestB;
 class TestA
 {
 public:
-    TestA()
-    {
-        std::cout << "TestA()" << std::endl;
-    }
-    void ReferTestB(std::shared_ptr<TestB> test_ptr)
-    {
-        m_TestB_Ptr = test_ptr;
-    }
-    ~TestA()
-    {
-        std::cout << "~TestA()" << std::endl;
-    }
+	TestA()
+	{
+		std::cout << "TestA()" << std::endl;
+	}
+	void ReferTestB(std::shared_ptr<TestB> test_ptr)
+	{
+		m_TestB_Ptr = test_ptr;
+	}
+	~TestA()
+	{
+		std::cout << "~TestA()" << std::endl;
+	}
 private:
-    std::shared_ptr<TestB> m_TestB_Ptr;
+	std::shared_ptr<TestB> m_TestB_Ptr;
 };
 
 class TestB
 {
 public:
-    TestB()
-    {
-        std::cout << "TestB()" << std::endl;
-    }
+	TestB()
+	{
+		std::cout << "TestB()" << std::endl;
+	}
 
-    void ReferTestB(std::shared_ptr<TestA> test_ptr)
-    {
-        m_TestA_Ptr = test_ptr;
-    }
-    ~TestB()
-    {
-        std::cout << "~TestB()" << std::endl;
-    }
-    std::shared_ptr<TestA> m_TestA_Ptr;
+	void ReferTestB(std::shared_ptr<TestA> test_ptr)
+	{
+		m_TestA_Ptr = test_ptr;
+	}
+	~TestB()
+	{
+		std::cout << "~TestB()" << std::endl;
+	}
+	std::shared_ptr<TestA> m_TestA_Ptr;
 };
 
+std::unique_ptr<int> smart_ptr_factory()
+{
+	return std::unique_ptr<int>(new int(200));
+}
 
 int main()
 {
-    std::shared_ptr<TestA> ptr_a = std::make_shared<TestA>();
-    std::shared_ptr<TestB> ptr_b = std::make_shared<TestB>();
-    ptr_a->ReferTestB(ptr_b);
-    ptr_b->ReferTestB(ptr_a);
-    return 0;
+	std::shared_ptr<TestA> ptr_a = std::make_shared<TestA>();
+	std::shared_ptr<TestB> ptr_b = std::make_shared<TestB>();
+	ptr_a->ReferTestB(ptr_b);
+	ptr_b->ReferTestB(ptr_a);
+
+	std::unique_ptr<int> uptr(new int(100));
+	// std::unique_ptr<int> uptr = std::make_unique<int>(100); // C++14
+	std::shared_ptr<int> sptr = std::move(uptr);
+	// sptr = std::move(uptr);
+	std::cout << "Smart Ptr test: " << *sptr << std::endl;
+
+	// return local unique_ptr
+	std::shared_ptr<int> sptr2 = smart_ptr_factory();
+	std::cout << "Smart Ptr test: " << *sptr2 << std::endl;
+
+
+	return 0;
 }

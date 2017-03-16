@@ -7,7 +7,10 @@ public:
 	Foo() : x(0)
 	{
 		// t = std::thread([=]{ ++x; });
+		// t = std::thread([&] { ++x;});
 		t = std::thread([this]{ this->x++; });
+		// t = std::thread([this]{ x++; });
+
 	}
 	Foo(const Foo&) = delete;
 	~Foo() { t.join(); }

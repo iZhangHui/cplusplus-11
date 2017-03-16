@@ -82,7 +82,7 @@ tuple<int,int,int> find_max_crossing_subarray(const vector<int>& array)
 	int right_sum = INT_MIN;
 
 	int mid = array.size() / 2;
-	tuple<int,int,int> result = {-1, -1, 0};
+	tuple<int,int,int> result{-1, -1, 0};
 
 	for (int i = mid; i > 0; --i) {
 		sum += array[i];
@@ -141,8 +141,10 @@ max_subarray find_maximum_subarray(int A[], unsigned low, unsigned high) {
 
 // 		if (left.sum >= right.sum && left.sum >= cross.sum) {
 // 			return left;
+
 // 		} else if (right.sum >= left.sum && right.sum >= cross.sum) {
 // 			return right;
+
 // 		} else {
 // 			return cross;
 // 		}

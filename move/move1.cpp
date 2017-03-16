@@ -20,5 +20,6 @@ int main(int argc, char const *argv[])
 	std::cout << "After move, str is " << str << std::endl;
 
 	std::cout << "The contents of the vector are " << vec[1] << std::endl;
+
 	return 0;
 }

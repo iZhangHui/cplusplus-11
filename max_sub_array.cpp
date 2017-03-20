@@ -106,27 +106,27 @@ tuple<int,int,int> find_max_crossing_subarray(const vector<int>& array)
 	return result;
 }
 
-max_subarray find_maximum_subarray(int A[], unsigned low, unsigned high) {
-	if (high == low + 1) {
-		max_subarray result = {low, high, A[low]};
-		return result;
-	} else {
-		unsigned mid = (low + high) / 2;
-		max_subarray left = find_maximum_subarray(A, low, mid);
-		max_subarray right = find_maximum_subarray(A, mid, high);
-		max_subarray cross = find_max_crossing_subarray(A, low, mid, high);
-
-		if (left.sum >= right.sum && left.sum >= cross.sum) {
-			return left;
-
-		} else if (right.sum >= left.sum && right.sum >= cross.sum) {
-			return right;
-
-		} else {
-			return cross;
-		}
-	}
-}
+//max_subarray find_maximum_subarray(int A[], unsigned low, unsigned high) {
+//	if (high == low + 1) {
+//		max_subarray result = {low, high, A[low]};
+//		return result;
+//	} else {
+//		unsigned mid = (low + high) / 2;
+//		max_subarray left = find_maximum_subarray(A, low, mid);
+//		max_subarray right = find_maximum_subarray(A, mid, high);
+//		max_subarray cross = find_max_crossing_subarray(A, low, mid, high);
+//
+//		if (left.sum >= right.sum && left.sum >= cross.sum) {
+//			return left;
+//
+//		} else if (right.sum >= left.sum && right.sum >= cross.sum) {
+//			return right;
+//
+//		} else {
+//			return cross;
+//		}
+//	}
+//}
 
 // The mixed algorithm
 // max_subarray find_maximum_subarray_mixed(int A[], unsigned low, unsigned high) {

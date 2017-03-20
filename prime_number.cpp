@@ -17,6 +17,7 @@
 #include <cmath>
 // #include <algorithm>
 #include <iostream>
+#include <vector>
 
 bool is_prime(int n)
 {

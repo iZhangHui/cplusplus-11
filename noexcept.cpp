@@ -1,5 +1,6 @@
-// #include <>
-void my_function noexcept { throw std::runtime_error("lolilol"); }
+#include <stdexcept>
+
+void my_function() noexcept { throw std::runtime_error("lolilol"); }
 
 int main(int argc, char const *argv[])
 {

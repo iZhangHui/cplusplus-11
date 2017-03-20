@@ -1,6 +1,6 @@
 #include <iostream>
-using namespace std;
 
+using namespace std;
 
 class Foo {
 private:
@@ -17,6 +17,7 @@ int main(int argc, char const *argv[])
 	cout << sizeof(long) << endl;
 	cout << sizeof(float) << endl;
 	cout << sizeof(double) << endl;
+	cout << "###################" << endl;
 
 	cout << sizeof(uint32_t) << endl;
 	cout << sizeof(uint64_t) << endl;
@@ -29,5 +30,6 @@ int main(int argc, char const *argv[])
 	cout << sizeof(ref) << endl;
 	Foo* ptr = new Foo();
 	cout << sizeof(ptr) << endl;
+
 	return 0;
 }

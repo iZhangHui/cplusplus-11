@@ -1,0 +1,2 @@
+add_executable(compare_exchange1 compare_exchange1.cpp)
+add_executable(compare_exchange2 compare_exchange2.cpp)

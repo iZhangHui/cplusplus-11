@@ -1,0 +1,5 @@
+add_executable(move1 move1.cpp)
+add_executable(move2 move2.cpp)
+add_executable(move3 move3.cpp)
+add_subdirectory(move4)
+add_executable(move5 move5.cpp)

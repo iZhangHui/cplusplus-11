@@ -1,0 +1,4 @@
+add_executable(enable_shared_from_this1 enable_shared_from_this1.cpp)
+add_executable(enable_shared_from_this2 enable_shared_from_this2.cpp)
+add_executable(enable_shared_from_this3 enable_shared_from_this3.cpp)
+add_executable(enable_shared_from_this4 enable_shared_from_this4.cpp)

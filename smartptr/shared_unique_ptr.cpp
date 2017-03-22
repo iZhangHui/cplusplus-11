@@ -88,8 +88,8 @@ int main()
 	ptr_a->ReferTestB(ptr_b);
 	ptr_b->ReferTestB(ptr_a);
 
-	std::unique_ptr<int> uptr(new int(100));
-	// std::unique_ptr<int> uptr = std::make_unique<int>(100); // C++14
+	// std::unique_ptr<int> uptr(new int(100));
+	std::unique_ptr<int> uptr = std::make_unique<int>(100); // C++14
 	std::shared_ptr<int> sptr = std::move(uptr);
 	// sptr = std::move(uptr);
 	std::cout << "Smart Ptr test: " << *sptr << std::endl;

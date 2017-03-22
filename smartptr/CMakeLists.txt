@@ -1,0 +1,2 @@
+add_executable(shared_unique_ptr shared_unique_ptr.cpp)
+add_executable(weak_ptr weak_ptr.cpp)

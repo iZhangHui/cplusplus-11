@@ -61,5 +61,6 @@ add_executable(virtaul_destructor virtaul_destructor.cpp)
 
 add_executable(pragma_pack pragma_pack.cpp)
 add_executable(vector_reserve vector_reserve.cpp)
+add_executable(data_member_init data_member_init.cpp)
 
 

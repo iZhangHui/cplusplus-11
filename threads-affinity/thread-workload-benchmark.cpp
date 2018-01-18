@@ -24,6 +24,8 @@
 #include <thread>
 #include <vector>
 
+#include <functional>
+
 // "Workload function" type. Takes a vector of float data and a reference to
 // a single float result.
 using WorkloadFunc = std::function<void(const std::vector<float>&, float&)>;

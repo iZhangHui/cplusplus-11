@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <functional>
 #include <array>
+#include <vector>
 #include <iostream>
 
 int main(int argc, char const *argv[])

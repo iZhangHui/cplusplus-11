@@ -1,10 +1,12 @@
  // Test boost lock free queue
 // g++ -std=c++11 -o boost_queue.exe boost_queue.cpp -lpthread -lboost_system
+// clang++-std=c++11 -o boost_queue.exe boost_queue.cpp -lpthread -lboost_system -latomic
 
 #include <thread>
 #include <atomic>
 #include <utility>
 #include <iostream>
+#include <vector>
 
 #include <boost/lockfree/queue.hpp>
 

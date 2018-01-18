@@ -25,7 +25,7 @@ add_subdirectory(threads-affinity)
 add_executable(access_control access_control.cpp)
 add_executable(auto auto.cpp)
 add_executable(boost_queue boost_queue.cpp)
-target_link_libraries(boost_queue pthread)
+target_link_libraries(boost_queue pthread atomic)
 
 add_executable(cast cast.cpp)
 add_executable(division_zero division_zero.cpp)
@@ -62,5 +62,4 @@ add_executable(virtaul_destructor virtaul_destructor.cpp)
 add_executable(pragma_pack pragma_pack.cpp)
 add_executable(vector_reserve vector_reserve.cpp)
 add_executable(data_member_init data_member_init.cpp)
-
-
+add_executable(array_ptr array_ptr.cpp)

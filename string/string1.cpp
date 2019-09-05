@@ -1,15 +1,13 @@
 #include <string.h>
-
 #include <iostream>
 
-using std::cout;
-using std::endl;
+using namespace std;
 
 class String {
 public:
-	String(const char* str = ""); // default constructor
+	String(const char* str = ""); // constructor
 
-	String(const String& copy); // copy constructor
+	String(const String& copy);   // copy constructor
 
 	String& operator=(const String& assign); // assign constuctor
 
@@ -21,8 +19,8 @@ private:
 
 String::String(const char* str)
 {
-	cout << "String default constructor!" << endl;
-	if (str == NULL) {
+	cout << "String constructor!" << endl;
+	if (str == nullptr) {
 		m_data = new char[1];
 		*m_data = '\0';
 		m_size = 0;
@@ -52,7 +50,7 @@ String& String::operator=(const String& other)
 		strcpy(temp, other.m_data);
 
 		delete[] m_data;
-		m_data =temp;
+		m_data = temp;
 		m_size = strlen(other.m_data);
 	}
 	return *this;
@@ -77,8 +75,7 @@ int main(int argc, char* argv[])
 
 	cout << "===================" << endl;
 
-	//String d = b;
-	String d(b);
+	String d(b); // String d = b;
 
 	cout << "===================" << endl;
 

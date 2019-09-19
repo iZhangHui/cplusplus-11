@@ -13,7 +13,7 @@ struct Bad
 	std::shared_ptr<Bad> getptr() {
 		return std::shared_ptr<Bad>(this);
 	}
-	~Bad() { std::cout << "Bad::~Bad() called\n"; }
+	~Bad() { std::cout << "Bad::~Bad() called" << std::endl; }
 };
 
 int main()
@@ -26,9 +26,8 @@ int main()
 	// Bad: shared_from_this is called without having std::shared_ptr owning the caller
 	try {
 		Good not_so_good;
-		std::shared_ptr<Good> gp1 = not_so_good.getptr();
+		std::shared_ptr<Good> gp1 = not_so_good.getptr(); // <<Effective Modern C++>> p130
 	} catch(std::bad_weak_ptr& e) {
-		// undefined behavior (until C++17) and std::bad_weak_ptr thrown (since C++17)
 		std::cout << e.what() << '\n';
 	}
 

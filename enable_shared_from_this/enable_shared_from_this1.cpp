@@ -13,14 +13,14 @@ public:
     void func()
     {
         cout<<"D::func()"<<endl;
-        std::shared_ptr<D> p = shared_from_this();
+        std::shared_ptr<D> p = shared_from_this(); // weak_ptr.lock()
         // p->?
     }
 };
 
 int main()
 {
-    std::shared_ptr<D> p(new D);
+    std::shared_ptr<D> p = std::make_shared<D>();
     p->func();;
     return 0;
 }

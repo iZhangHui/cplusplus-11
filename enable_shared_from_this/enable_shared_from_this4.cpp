@@ -54,10 +54,11 @@ public:
 		cout << "A::~A()" << endl;
 	}
 
-	void f() {
-		//cout << shared_from_this()->_x << endl; // this way is okay too
+	shared_ptr<A> f() {
+		// cout << shared_from_this()->_x << endl; // this way is okay too
 		shared_ptr<A> p = shared_from_this();
 		cout << p->_x << endl;
+		return p;
 	}
 
 private:
@@ -66,8 +67,8 @@ private:
 
 int main(int argc, char** argv)
 {
-	shared_ptr<A> x(new A);
-	x->f();
+	shared_ptr<A> x = make_shared<A>();
+	shared_ptr<A> p = x->f();
 	return 0;
 }
 

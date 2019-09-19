@@ -8,3 +8,5 @@ target_link_libraries(lambda3 pthread)
 
 add_executable(lambda4 lambda4.cpp)
 add_executable(lambda5 lambda5.cpp)
+add_executable(lambda6 lambda6.cpp)
+

@@ -17,7 +17,7 @@ public:
 int main(int argc, char const *argv[])
 {
     vector<Foo> v;
-    //v.reserve(2);
+    // v.reserve(2);
     v.push_back(Foo(1, "hello"));
 
     v.emplace_back(3, "world");

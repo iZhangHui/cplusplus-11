@@ -1,4 +1,4 @@
-//#pragma GCC diagnostic error "-std=c++11"
+// #pragma GCC diagnostic error "-std=c++11"
 
 #include <iostream>
 using namespace std;
@@ -9,7 +9,7 @@ template <typename T1, typename T2>
 // 	return t1+t2;
 // }
 
-//C++14 support auto return
+// C++14 support auto return
 auto compose(T1 t1, T2 t2)
 {
 	return t1+t2;

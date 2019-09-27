@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 project(cpp11_test CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
+# use clang++ default
+set(CMAKE_CXX_COMPILER clang++)
 
 find_package(Boost)
 
@@ -20,12 +22,12 @@ add_subdirectory(template)
 add_subdirectory(thread)
 # add_subdirectory(threadpool)
 add_subdirectory(threads-affinity)
+add_subdirectory(boost)
+
 ###############################################################
 ###############################################################
 add_executable(access_control access_control.cpp)
 add_executable(auto auto.cpp)
-add_executable(boost_queue boost_queue.cpp)
-target_link_libraries(boost_queue pthread atomic)
 
 add_executable(cast cast.cpp)
 add_executable(division_zero division_zero.cpp)
@@ -34,7 +36,7 @@ add_executable(explicit explicit.cpp)
 add_executable(float_division float_division.cpp)
 add_executable(functional1 functional1.cpp)
 
-#add_library(lru_cache lru_cache.hpp)
+# add_library(lru_cache lru_cache.hpp)
 
 add_executable(max_sub_array max_sub_array.cpp)
 add_executable(noexcept noexcept.cpp)

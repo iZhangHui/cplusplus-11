@@ -1,0 +1,5 @@
+add_executable(boost_lockfree_queue boost_lockfree_queue.cpp)
+target_link_libraries(boost_lockfree_queue pthread atomic)
+
+add_executable(boost_waitfree_queue boost_waitfree_queue.cpp)
+target_link_libraries(boost_waitfree_queue pthread atomic)

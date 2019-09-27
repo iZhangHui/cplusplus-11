@@ -1,6 +1,6 @@
 struct ListNode {
-int value;
-struct ListNode* next;
+	int value;
+	struct ListNode* next;
 };
 
 ListNode* revert_list(ListNode* head)
